@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     
     'training_records',
     'diet_records',
+    'sleep_records',
+    'body_data',
+    'dashboard',
 
    
 ]

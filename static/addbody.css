@@ -8,48 +8,47 @@ body {
 
 /* Navbar Styling */
 .navbar {
-    background-color: #343a40; /* Dark background for the navbar */
-    border-bottom: 2px solid #ff5733; /* Orange border at the bottom */
-    padding: 15px 0; /* Increased padding for better height */
+    background-color: #343a40;
+    border-bottom: 2px solid #ff5733;
+    padding: 15px 0;
 }
 
 .navbar-brand {
-    font-size: 1.75rem; /* Larger font size for the brand */
+    font-size: 1.75rem;
     font-weight: bold;
-    color: #ff5733; /* Orange color for the brand */
-    margin-right: auto; /* Ensures the brand stays on the left */
+    color: #ff5733;
 }
 
 .navbar-nav {
-    margin-left: auto;  /* Ensure that links and button are pushed to the right */
-    list-style-type: none;  /* Removes bullets from the list */
-    display: flex;  /* Display items horizontally */
-    gap: 15px;  /* Adds spacing between links */
+    margin-left: auto;
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
 }
 
 .navbar-nav .nav-item .nav-link {
-    color: white; /* White color for navigation links */
+    color: white;
     font-weight: 500;
-    padding: 12px 20px; /* Increased padding for better readability */
+    padding: 12px 20px;
     font-size: 16px;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-    color: #ff5733; /* Orange color on hover */
+    color: #ff5733;
 }
 
 .navbar-nav .nav-item .btn {
-    background-color: #ff5733; /* Orange background for the Sign Up button */
-    color: white; /* White text for the button */
+    background-color: #ff5733;
+    color: white;
     font-weight: 600;
-    padding: 12px 25px; /* Increased padding to make the button larger */
+    padding: 12px 25px;
     font-size: 16px;
     border-radius: 5px;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
 }
 
 .navbar-nav .nav-item .btn:hover {
-    background-color: #c74d2a; /* Darker orange on hover */
+    background-color: #c74d2a;
 }
 
 /* Main Content Styling */
@@ -119,22 +118,22 @@ textarea {
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar-nav .nav-item .nav-link {
-        font-size: 14px; /* Smaller text for mobile */
+        font-size: 14px;
     }
 
     .navbar-brand {
-        font-size: 1.5rem; /* Smaller brand name on mobile */
+        font-size: 1.5rem;
     }
 
     .container {
-        padding: 0 15px; /* Add padding on mobile for better alignment */
+        padding: 0 15px;
     }
 
     h1 {
-        font-size: 1.5rem; /* Slightly smaller heading for mobile */
+        font-size: 1.5rem;
     }
 
     .btn-primary {
-        padding: 8px 15px; /* Smaller button on mobile */
+        padding: 8px 15px;
     }
 }
