@@ -138,3 +138,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Media files (for uploaded user files, if any)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Import production settings if in production environment
+if os.environ.get('DJANGO_SETTINGS_MODULE') == 'fitness_journal.settings_production':
+    from .settings_production import *
