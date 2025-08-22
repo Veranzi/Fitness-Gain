@@ -31,7 +31,8 @@ STATIC_URL = '/static/'
 MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 
 # Configure whitenoise
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Keep original filenames to avoid 404s when templates reference non-hashed assets
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Security settings for production
 SECURE_BROWSER_XSS_FILTER = True
