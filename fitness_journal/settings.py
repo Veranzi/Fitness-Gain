@@ -27,6 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Allow hosts configuration via environment variable, fallback to Render default domain pattern
+import os
+_env_hosts = os.environ.get('ALLOWED_HOSTS')
+if _env_hosts:
+    ALLOWED_HOSTS = [h.strip() for h in _env_hosts.split(',') if h.strip()]
+else:
+    # Accept any subdomain on render.com
+    ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
+
 
 # Application definition
 
