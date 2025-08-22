@@ -27,5 +27,7 @@ urlpatterns = [
     path('diet/', include ('diet_records.urls') ),
     path('sleep/', include('sleep_records.urls')),
     path('body/', include('body_data.urls')),
+    path('planning/', include('planning.urls')),
+
 
 ]

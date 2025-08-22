@@ -27,15 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# Allow hosts configuration via environment variable, fallback to Render default domain pattern
-import os
-_env_hosts = os.environ.get('ALLOWED_HOSTS')
-if _env_hosts:
-    ALLOWED_HOSTS = [h.strip() for h in _env_hosts.split(',') if h.strip()]
-else:
-    # Accept any subdomain on render.com
-    ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
-
 
 # Application definition
 
@@ -53,13 +44,13 @@ INSTALLED_APPS = [
     'sleep_records',
     'body_data',
     'dashboard',
+    'planning',
 
    
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -134,25 +125,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-# Use WhiteNoise compressed storage without manifest so filenames remain unchanged
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-
-# Directory where collectstatic will gather static files for production
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media files (for uploaded user files, if any)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Import production settings if in production environment
-if os.environ.get('DJANGO_SETTINGS_MODULE') == 'fitness_journal.settings_production':
-    from .settings_production import *
