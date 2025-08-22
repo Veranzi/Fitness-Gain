@@ -9,7 +9,7 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.0
       - key: DJANGO_SETTINGS_MODULE
-        value: fitness_journal.settings
+        value: fitness_journal.settings_production
       - key: SECRET_KEY
         generateValue: true
       - key: WEB_CONCURRENCY
