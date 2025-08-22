@@ -142,6 +142,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
+# Use WhiteNoise compressed storage without manifest so filenames remain unchanged
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
 # Directory where collectstatic will gather static files for production
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
